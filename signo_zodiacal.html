@@ -97,7 +97,7 @@ var imgcam = document.getElementById("imgbase");
 var mes = Number(document.querySelector("input[name = mes]:checked").value);
 var x = "a";
 imgcam.src="imagenes/fondo.png";
-if (n>30 || n<=0) {
+if (n>31 || n<=0) {
     alert("Día de nacimiento invalido.")
     imgcam.src="imagenes/fondo2.png";
 }else if ((mes == 3 && n >= 21) || (mes ==4 && n<=20 )){
