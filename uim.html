@@ -1,0 +1,99 @@
+<html>
+<head>
+	<link rel="shortcut icon" href="imagenes/pez.png">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>UIM</title>
+</head>
+<body>
+	        <nav>
+            <a href="index.html"><img class="logo" src="imagenes/icon3.png" alt="logo"></a>
+
+            <ul class="enlaces-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li>Determinar
+                <ul>
+                    <li><a href="mayor_2_n.html">Mayor de dos números</a></li>
+                    <li><a href="menor_3_n.html">Menor de tres números</a></li>
+                    <li><a href="p_n_c.html">Número positivo, negativo o cero</a></li>
+                    <li><a href="par_impar.html">Número par o impar</a></li>
+                    <li><a href="mayor_edad.html">Mayoria de edad</a></li>
+                    <li><a href="signo_zodiacal.html">Signo zodiacal</a></li>
+                </ul></li>
+                <li>Ordenar
+                <ul>
+                    <li><a href="mayor_menor_prom.html">Menor, mayor y promedio</a></li>
+                    <li><a href="suma_conteo.html">Suma y conteo de n números</a></li>
+                    <li><a href="orden_ascendente.html">Orden de números ascendente</a></li>
+                </ul></li>
+                <li><a href="tienda_zapatos.html">Zapatos</a></li>
+                <li><a href="uim.html">UIM</a></li>
+            </ul>
+
+            <button class="ham" type="button">   
+                <span class="br-1"></span>
+                <span class="br-2"></span>
+                <span class="br-3"></span>
+            </button>                       
+        </nav>
+<form>
+	<br>
+<table align="center" width="85%" border="0">
+<tr>
+<td colspan="3">
+<h1 align="center" face="Bookman Old Style"><span style="font-size: 200%; font-family: 'Arial, Helvetica';">
+Universidad imaginaria</span></h1>
+<div align="center"><span style="font-size: 25px; font-family: 'Arial, Helvetica';">
+Revisión de aceptación</span></div></td>
+</tr>
+<tr>
+	<td width="33%" align="center"><br><font size="5"><br>Promedio de bachillerato:<br> <input type="text" id="n1" size=5 style="width:75%; height:30px; text-align: center; background-color: #ECECEC; font-size: 16px;"></font>
+	</td>
+	<td width="33%" align="center"><br><font size="5"><br>Resultado de EXANI:<br> <input type="text" id="n2" size=5 style="width:75%; height:30px; text-align: center; background-color: #ECECEC; font-size: 16px;"></font>
+	</td>
+	<td width="33%" align="center"><br><font size="5"><br>Examen de ingreso:<br> <input type="text" id="n3" size=5 style="width:75%; height:30px; text-align: center; background-color: #ECECEC; font-size: 16px;"></font>
+	</td>
+
+</tr>
+<tr>
+	<td align="center" rowspan="2"><img src="imagenes/uni.png" id="imgbase2" width="60%"></td></td>
+	<td align="center" valign="bottom">
+		<br><input type="button" class="button1" value="Determinar" onclick="determinar()" style="width:75%; height:30px; font-size: 16px;">
+	</td>
+	<td width="33%" align="center" valign="bottom">
+	<input type="reset" class="button1" value="Reset" style="width:75%; height:30px; font-size: 16px;">
+	</td>
+</tr>
+<tr>
+	<td align="center"><input type="text" id="resultado" disabled style="border: 0; outline: none; background-color: #CCF3FE; color: black; font-weight: 520; font-size: 22px; text-align: center; width: 150px;"><br>
+	</td>
+<td align="center"><img src="imagenes/fondo3.png" id="imgbase" width="45%"></td>
+</tr>
+</table>
+</form>
+<script>
+function determinar(){
+var n1 = Number(document.getElementById("n1").value);
+var n2 = Number(document.getElementById("n2").value);
+var n3 = Number(document.getElementById("n3").value);
+var imgcam = document.getElementById("imgbase");
+
+if (n1<0 || n1>10) {
+	alert("Promedio de bachillerato invalido");
+}else if (n1 >= 8.5 && n2 >= 1050 && n3 >= 800) {
+	imgcam.src="imagenes/mugi.png";
+	document.getElementById("resultado").value = "!Felicidades¡";
+	alert("Cumples con todos los requisitos para ingresar.");
+}else if (n1 == 0 || n2 == 0 || n3 == 0){
+	alert("Por favor rellene todos los campos.");
+	imgcam.src="imagenes/fondo3.png";
+}else if (n1 < 8.5 || n2 < 1050 || n3 < 800){
+	imgcam.src="imagenes/aqua.gif";
+	document.getElementById("resultado").value = "Lo sentimos";
+	alert("No cumples con todos los requisitos para ingresar.");
+}
+}
+</script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Mayor de 2 números</title>
+	<link rel="shortcut icon" href="imagenes/pez.png">
+</head>
+<style type="text/css">
+	 
+</style>
+<body>
+	        <nav>
+            <a href="index.html"><img class="logo" src="imagenes/icon3.png" alt="logo"></a>
+
+            <ul class="enlaces-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li>Determinar
+                <ul>
+                    <li><a href="mayor_2_n.html">Mayor de dos números</a></li>
+                    <li><a href="menor_3_n.html">Menor de tres números</a></li>
+                    <li><a href="p_n_c.html">Número positivo, negativo o cero</a></li>
+                    <li><a href="par_impar.html">Número par o impar</a></li>
+                    <li><a href="mayor_edad.html">Mayoria de edad</a></li>
+                    <li><a href="signo_zodiacal.html">Signo zodiacal</a></li>
+                </ul></li>
+                <li>Ordenar
+                <ul>
+                    <li><a href="mayor_menor_prom.html">Menor, mayor y promedio</a></li>
+                    <li><a href="suma_conteo.html">Suma y conteo de n números</a></li>
+                    <li><a href="orden_ascendente.html">Orden de números ascendente</a></li>
+                </ul></li>
+                <li><a href="tienda_zapatos.html">Zapatos</a></li>
+                <li><a href="uim.html">UIM</a></li>
+            </ul>
+
+            <button class="ham" type="button">   
+                <span class="br-1"></span>
+                <span class="br-2"></span>
+                <span class="br-3"></span>
+            </button>                       
+        </nav>
+<form>
+	<br>
+<table align="center" width="80%" border="0">
+<tr>
+<td colspan="3">
+<h1 align="center" face="Bookman Old Style"><span style="font-size: 200%; font-family: 'Arial, Helvetica';">
+Mayor de dos números</span></h1>
+<div align="center"><span style="font-size: 25px; font-family: 'Arial, Helvetica';">
+"X > Y"? o "Y > X"?</span></div></td>
+</tr>
+<tr>
+	<td width="33%" align="center" rowspan="2"><img src="imagenes/n1.png" width="75%" height=""></td>
+	<td width="33%" align="center"><br><input type="button" class="button1" value="Determinar" onclick="determinar()" style="width:75%; height:30px; font-size: 16px;"><br>
+	<br><input type="reset" class="button1" value="Reset" style="width:75%; height:30px; font-size: 16px;">
+	</td>
+	<td width="33%" align="center" rowspan="2">
+		<img src="imagenes/n2.png" width="75%">
+	</td>
+</tr>
+<tr>
+	<td align="center"><font size="5">El número mayor es:</font><br><input class="redondeadonorelieve" type="text" id="resultado" disabled style="width:50%; height:25px; background-color: #EBEBEB; font-size: 20px;"><br><br></td><br>
+</tr>
+<tr>
+	<td align="center"><font size="5"><br>Primer número:<br><br> <input type="text" id="x" size=5 style="width:75%; height:30px; text-align: center; background-color: #ECECEC; font-size: 16px;"></font></td>
+	<td align="center"><img src="imagenes/interrogacion.png" id="imgbase" width="75%">
+	<td align="center"><font size="5"><br>Segundo número:<br><br> <input type="text" id="y" size=5 style="width:75%; height:30px; text-align: center; background-color: #ECECEC; font-size: 16px;">
+	</font></td>
+</tr>
+</table>
+</form>
+<script>
+function determinar(){
+var x = Number(document.getElementById("x").value);
+var y = Number(document.getElementById("y").value);
+var imgcam = document.getElementById("imgbase");
+var mayor = 0
+if (x>y) {
+	mayor = x
+	imgcam.src="imagenes/p1.png"
+}
+else if (y>x){
+	mayor = y
+	imgcam.src="imagenes/p2.png"
+} 
+else{
+	mayor = 0
+	imgcam.src="imagenes/interrogacion.png"
+}
+
+document.getElementById("resultado").value = mayor;
+}
+</script>
+<script src="main.js"></script>
+</body>
+</html>

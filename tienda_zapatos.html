@@ -1,0 +1,97 @@
+<html>   
+<head>
+	<meta charset="utf-8">
+    <link rel="shortcut icon" href="imagenes/pez.png">
+	<link rel="stylesheet" type="text/css" href="main.css">
+    <link href="styles/select.css" rel="stylesheet" type="text/css">
+	<title>Tienda de zapatos</title>
+</head>
+<body>
+<nav>
+  <a href="index.html"><img class="logo" src="imagenes/icon3.png" alt="logo"></a>
+  <ul class="enlaces-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li>Determinar
+                <ul>
+                    <li><a href="mayor_2_n.html">Mayor de dos números</a></li>
+                    <li><a href="menor_3_n.html">Menor de tres números</a></li>
+                    <li><a href="p_n_c.html">Número positivo, negativo o cero</a></li>
+                    <li><a href="par_impar.html">Número par o impar</a></li>
+                    <li><a href="mayor_edad.html">Mayoria de edad</a></li>
+                    <li><a href="signo_zodiacal.html">Signo zodiacal</a></li>
+                </ul></li>
+                <li>Ordenar
+                <ul>
+                    <li><a href="mayor_menor_prom.html">Menor, mayor y promedio</a></li>
+                    <li><a href="suma_conteo.html">Suma y conteo de n números</a></li>
+                    <li><a href="orden_ascendente.html">Orden de números ascendente</a></li>
+                </ul></li>
+                <li><a href="tienda_zapatos.html">Zapatos</a></li>
+                <li><a href="uim.html">UIM</a></li>
+            </ul>
+
+            <button class="ham" type="button">   
+                <span class="br-1"></span>
+                <span class="br-2"></span>
+                <span class="br-3"></span>
+            </button>                       
+        </nav>
+<form>
+	<br>
+<table align="center" width="85%" border="0">
+<tr>
+<td width="25%" align="center" rowspan="3"><img src="imagenes/zapatos.png" id="imgbase" width="100%"> 
+    </td>
+<td colspan="2">
+<h1 align="center" face="Bookman Old Style"><span style="font-size: 150%; font-family: 'Arial, Helvetica';">
+Tienda de zapatos</span></h1>
+<div align="center"><span style="font-size: 25px; font-family: 'Arial, Helvetica';">
+    (Aplican descuentos por membresía)
+</span></div><br></td>
+</tr>
+<tr>
+	<td width="33%" align="center"><font size="5">Precio a pagar:<br> <input type="text" id="n" size=5 style="width:75%; text-align: center; height:30px; background-color: #ECECEC; font-size: 16px;"></font><br><br>
+    <div class="select" tabindex="1" style="display:flex; align-items:center; font-family: sans-serif; color:#FFF;">
+      <input class="selectopt" type="radio" name="member" checked>
+      <label class="option">Membresias disponibles</label>
+      <input class="selectopt" name="member" value="0" type="radio" id="op1">
+      <label for="op1" class="option">Ninguna</label> 
+      <input class="selectopt" name="member" value="1" type="radio" id="op2">
+      <label for="op2" class="option">Tipo 105</label>
+      <input class="selectopt" name="member" value="2" type="radio" id="op3">
+      <label for="op3" class="option">Tipo 206</label>
+      <input class="selectopt" name="member" value="3" type="radio" id="op4">
+      <label for="op4" class="option">Tipo 307</label>
+    </div> 
+	</td>
+	<td width="33%" align="center"><br><input type="button" class="button1" value="Calcular" onclick="determinar()" style="width:75%; height:30px; font-size: 16px;">
+    <br><br><input type="reset" class="button1" value="Reset" style="width:75%; height:30px; font-size: 16px;">
+    </td>
+</tr>
+<tr> 
+	<td align="center" colspan="2"><br><font size="5"><b>Total a pagar:</b></font><br><input class="redondeadonorelieve" type="text" id="resultado" disabled style="width:70%; height:35px; background-color: #EBEBEB; font-size: 20px;"><br><br>
+	</td>
+</tr>
+</table>
+</form>
+<script>
+function determinar(){
+var n = Number(document.getElementById("n").value);
+var member = Number(document.querySelector("input[name = member]:checked").value);
+var x = "a";
+var total = 0
+if (member == 0){
+    total = n
+}else if (member == 1){
+    total = n - (n*.13)
+}else if (member == 2){
+    total = n - (n*.22)
+}else if (member == 3){
+    total = n - (n*.28)
+}
+document.getElementById("resultado").value = "$" + total;
+}
+</script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<html>
+<head>
+    <link rel="shortcut icon" href="imagenes/pez.png">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Mayor, menor y promedio</title>
+</head>
+<body>
+<nav>
+  <a href="index.html"><img class="logo" src="imagenes/icon3.png" alt="logo"></a>
+  <ul class="enlaces-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li>Determinar
+                <ul>
+                    <li><a href="mayor_2_n.html">Mayor de dos números</a></li>
+                    <li><a href="menor_3_n.html">Menor de tres números</a></li>
+                    <li><a href="p_n_c.html">Número positivo, negativo o cero</a></li>
+                    <li><a href="par_impar.html">Número par o impar</a></li>
+                    <li><a href="mayor_edad.html">Mayoria de edad</a></li>
+                    <li><a href="signo_zodiacal.html">Signo zodiacal</a></li>
+                </ul></li>
+                <li>Ordenar
+                <ul>
+                    <li><a href="mayor_menor_prom.html">Menor, mayor y promedio</a></li>
+                    <li><a href="suma_conteo.html">Suma y conteo de n números</a></li>
+                    <li><a href="orden_ascendente.html">Orden de números ascendente</a></li>
+                </ul></li>
+                <li><a href="tienda_zapatos.html">Zapatos</a></li>
+                <li><a href="uim.html">UIM</a></li>
+            </ul>
+
+            <button class="ham" type="button">   
+                <span class="br-1"></span>
+                <span class="br-2"></span>
+                <span class="br-3"></span>
+            </button>                       
+        </nav>
+<form>
+	<br>
+<table align="center" width="85%" border="0">
+<tr>
+<td colspan="3">
+<h1 align="center" face="Bookman Old Style"><span style="font-size: 200%; font-family: 'Arial, Helvetica';">
+Mayor, menor y promedio</span></h1>
+<div align="center"><span style="font-size: 25px; font-family: 'Arial, Helvetica';">
+">" "<"</span></div><br></td>
+</tr>
+<tr>
+	<td align="center" valign="bottom" width="33%"><br><input type="button" class="button1" value="Continuar" onclick="determinar()" style="width:75%; height:30px; font-size: 16px;">
+    </td> 
+    <td align="center" valign="bottom" width="33%"><br><font size="5"><br>Cantidad de valores a ingresar:<br> <input type="text" id="n" size=5 style="width:75%; height:30px; background-color: #ECECEC; font-size: 16px; text-align: center;"></font>
+    </td>
+    <td align="center" valign="bottom" width="33%"><input type="reset" class="button1" value="Reset" style="width:75%; height:30px; font-size: 16px;">
+    </td>
+</tr>
+<tr>
+    <td align="center"><br><font size="5"><b>Mayor:</b></font><br><input class="redondeadonorelieve" type="text" id="resultado1" disabled style="width:75%; height:25px; background-color: #EBEBEB; font-size: 20px;"><br><br>
+    </td>
+    <td align="center"><br><font size="5"><b>Promedio:</b></font><br><input class="redondeadonorelieve" type="text" id="resultado2" disabled style="width:75%; height:25px; background-color: #EBEBEB; font-size: 20px;"><br><br>
+    </td>
+    <td align="center"><br><font size="5"><b>Menor:</b></font><br><input class="redondeadonorelieve" type="text" id="resultado3" disabled style="width:75%; height:25px; background-color: #EBEBEB; font-size: 20px;"><br><br></td>
+</tr>
+<tr>
+    <td align="center"><img src="imagenes/mayor.png" width="30%"></td>
+    <td align="center"><img src="imagenes/promedio.png" width="30%"></td>
+    <td align="center"><img src="imagenes/menor.png" width="30%"></td>
+</tr>
+</table>
+</form>
+<script>
+function determinar(){
+var n1 = Number(document.getElementById("n").value);
+var n2 = n1
+var n3 = 1;
+var mayor = 0;
+var menor = 100000000000000;
+var prom = 0;
+while (n1>=1){
+    n1-=1;
+    var n = parseInt(prompt("Ingrese el valor número "+n3+":",0));
+    if (n > mayor) {
+        mayor = n
+    }
+    if (n < menor) {
+        menor = n
+    }
+    prom = prom + n;
+    n3+=1;
+
+}
+var promf = prom/n2;
+document.getElementById("resultado1").value = mayor;
+document.getElementById("resultado2").value = promf;
+document.getElementById("resultado3").value = menor;
+}
+</script>
+<script src="main.js"></script>
+</body>
+</html>
